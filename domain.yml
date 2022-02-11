@@ -1,0 +1,43 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - demand_joke
+
+responses:
+  utter_greet:
+  - text: "Hallo, wie geht es dir?"
+
+  utter_cheer_up:
+  - text: "Hier ist etwas um dich aufzubauen:"
+    image: "https://tenor.com/search/futurama-gifs"
+
+  utter_did_that_help:
+  - text: "Hat die das geholfen?"
+
+  utter_happy:
+  - text: "Super, weiter so."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Ich bin ein Bot."
+
+  utter_joke:
+  - text: "Siri, warum sind Frauen so komisch zu mir?“ – „Mein Name ist Alexa!"
+  - text: "Zwei Informatiker telefonieren: „Wie ist bei dir das Wetter?“ – „Capslock!“ – „Häh?“ – „Shift unendlich.“"
+  - text: "Treffen sich zwei Magnete, sagt der eine: „Was soll ich heute bloß anziehen?“"
+  - text: "Geht ein Neutron in die Disco. Sagt der Türsteher: „Nur für geladene Gäste!“"
+  - text: "Unterhalten sich 2 Kerzen: „Ist Wasser gefährlich?“ – „Davon kannst du ausgehen!“"
+  - text: "Ich kenne einen lustigen Bahnwitz – weiß aber nicht, ob der ankommt."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

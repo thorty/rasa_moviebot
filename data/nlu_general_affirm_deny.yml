@@ -1,0 +1,154 @@
+version: "2.0"
+nlu:
+  - intent: affirm
+    examples: |
+      - ja
+      - jawohl
+      - jawoll
+      - jaja
+      - Japp
+      - Jepp
+      - jo
+      - Joa
+      - ok
+      - jepp
+      - natürlich
+      - Ja
+      - Ja,danke
+      - Ja, danke
+      - o.k.
+      - o. k.
+      - okay
+      - Si
+      - Yes
+      - na
+      - alles top
+      - auf jeden Fall
+      - ausgezeichnet
+      - Gern
+      - gerne
+      - Glaube schon
+      - vermutlich
+      - In Ordnung
+      - Klar
+      - so ist es
+      - Was denn sonst
+      - von mir aus
+      - einverstanden
+      - top
+      - angenehm
+      - wäre schön
+      - bingo
+      - exakt
+      - genau
+      - haargenau
+      - korrekt
+      - passt
+      - präzise
+      - richtig
+      - stimmt
+      - zutreffend
+      - ja Danke
+      - ja Dankeschön
+      - ja Dankesehr
+      - ja Herzlichen Dank
+      - jawoll nicht dafür
+      - jawoll Vielen Dank
+      - jaja da nicht für
+      - bitten darum
+      - bitten Sie darum
+      - darfst Du
+      - dürfen Sie
+      - finde ich gut
+      - gebongt
+      - gebont
+      - Klingt gut
+      - wollen ich
+      - Machen sie
+      - Mach doch
+      - Mach was du willst
+      - Wenn du willst
+      - möchten ich
+      - möchten wir
+      - Wenns notwendig ist
+      - ok bitteschön
+      - ok bittesehr
+      - so es erforderlich ist
+      - so es unumgänglich ist
+      - so es unerlässlich ist
+      - so es geboten ist
+      - so es unvermeidlich ist
+  - intent: deny
+    examples: |
+      - Ne
+      - Nee
+      - nein
+      - neinnein
+      - Neverever
+      - No
+      - nö
+      - Nein
+      - Nope
+      - nicht ok
+      - nicht okay
+      - Nichts da
+      - Nix da
+      - passt nicht
+      - Oh stop
+      - das nicht
+      - davon nichts
+      - davon nix
+      - Eher nicht
+      - Kein
+      - keinesfalls
+      - Nichts davon
+      - nich
+      - nicht
+      - nichts
+      - nix
+      - Kein Bock
+      - Keine Lust
+      - Lassen das
+      - Lassen mal
+      - Lassen Sie das
+      - Lassen Sie mal
+      - Nicht das
+      - Nicht jetzt
+      - Nicht nötig
+      - Hat sich erledigt
+      - Bitte nich
+      - Bitte nicht
+      - Bitte nichts
+      - Bitte nix
+      - Bloß nich
+      - Bloß nicht
+      - Bloß nichts
+      - Bloß nix
+      - lieber nich
+      - lieber nicht
+      - lieber nichts
+      - lieber nix
+      - möchten nich
+      - möchten nicht
+      - möchten nichts
+      - möchten nix
+      - möchten ich nicht
+      - möchten wir nicht
+      - wollen nichts
+      - wollen nix
+      - wollen ich nicht
+      - wollen wir nicht
+      - da nicht für Ne
+      - da nicht für Nee
+      - da nicht für nein
+      - Danke Ne
+      - Danke nein
+      - Danke neinnein
+      - Danke Neverever
+      - Danke No
+      - Danke nö
+      - Danke Nope
+      - Dankeschön Ne
+      - Dankeschön Nee
+      - Dankeschön nein
+      - Dankeschön neinnein
