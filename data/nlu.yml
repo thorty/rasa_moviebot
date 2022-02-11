@@ -81,3 +81,19 @@ nlu:
     - kennst du einen witz?
     - bitte gib mir was zu lachen
     - bring mich zum lachen
+
+- intent: confirm_existsis
+  examples: |
+    - ist [bulbasaur](pokemon_name) ein pokemon
+    - gibt es [ninetails](pokemon_name) 
+    - schon mal von [pikachu](pokemon_name) gehört
+    - sind [pikachu](pokemon_name) und [charmander](pokemon_name) pokemon?
+    - ist [rasa](pokemon_name) ein pokemon?
+    - hey ist [rasa](pokemon_name) ein pokemon?
+    - sind [pichuka](pokemon_name) und [charmander](pokemon_name) pokemon?
+    - sind [snorlax](pokemon_name), [gariddos](pokemon_name) und [dittto](pokemon_name) pokemon?
+
+- synonym: pokemon
+  examples: |
+    - pokemons
+
