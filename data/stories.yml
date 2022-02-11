@@ -33,3 +33,8 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: pokemon exists
+  steps:
+  - intent: confirm_exists
+  - action: action_check_existence

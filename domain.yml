@@ -9,6 +9,23 @@ intents:
   - mood_unhappy
   - bot_challenge
   - demand_joke
+  - confirm_exists
+actions:
+  - action_check_existence  
+  - utter_ask_rephrase
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_greet
+  - utter_happy
+  - utter_iamabot
+  - utter_joke
+entities:
+  - attribute
+  - mention
+  - object_type
+  - pokemon
+  - pokemon_name
 
 responses:
   utter_greet:
@@ -26,6 +43,10 @@ responses:
 
   utter_goodbye:
   - text: "Bye"
+
+  utter_ask_rephrase:
+  - text: Sorry ich bin mir nicht sicher? Was meintest du?  
+  - text: Könntest du das bitte neu formulieren? Das habe ich nicht ganz verstanden. 
 
   utter_iamabot:
   - text: "Ich bin ein Bot."
