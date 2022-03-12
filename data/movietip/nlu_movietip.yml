@@ -1,0 +1,53 @@
+version: "2.0"
+
+nlu:
+- intent: movietip
+  examples: |
+    - empfehle mir einen film
+    - was soll ich heute schauen
+    - kannst du mir einen film empfehlen
+    - welchen film kannst du mir empfehlen
+    - ich weiss nicht was ich heute schauen soll
+    - hast du einen filmtip für mich
+    - kannst du mir etwas zu schauen empfehlen
+    - welchen film empfiehlst du mir heute
+    - welchen film empfiehlst du mir
+    - kannst du mir einen [action]{"entity": "genre"} film raus suchen
+    - ich möchte [action]{"entity": "genre"} film raus suchen
+    - ich möchte einen [action]{"entity": "genre"} film sehen
+    - ich möchte einen [action]{"entity": "genre"} film sehen
+    
+
+- intent: randommovietip
+  examples: |
+    - egal
+    - ist mir egal
+    - irgend einen
+    - irgend einer
+    - egal welcher
+    - einen guten
+    - den besten
+    - das beste was du im angebot hast
+    - einen anderen film
+    - einen weiteren film
+    - weiter
+
+- intent: specialmovietip
+  examples: |
+    - einen bestimmten
+    - etwas bestimmtes
+    - ich habe spezielle wünsche 
+    - speziellen film 
+    - bestimmten film
+    - kannst du mir einen bestimmten Film empfehlen
+    - ich möchte etwas spezielles sehen
+    - ich interessiere mich für einen film
+
+- intent: denymovietip
+  examples: |
+    - den habe ich schon gesehen
+    - den kenne ich schon
+    - den möchte ich nicht sehen
+    - den film mag ich nicht
+    - den mag ich nicht
+
