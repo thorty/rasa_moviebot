@@ -1,0 +1,33 @@
+version: "2.0"
+
+stories:
+  - story: movietip_accept
+    steps:
+      - intent: movietip
+      - action: utter_randommovie
+      - intent: affirm
+      - action: utter_movieaccepted
+      - action: utter_goodbye
+
+  - story: movietip_deny
+    steps:
+      - intent: movietip
+      - action: utter_randommovie
+      - intent: denymovietip
+      - action: utter_denied
+      - action: utter_askformovietaste
+
+  - story: movietip_deny
+    steps:
+      - intent: movietip
+      - action: utter_randommovie
+      - intent: deny
+      - action: utter_denied
+      - action: utter_askformovietaste
+      - intent: randommovietip
+      - action: utter_randommovie
+
+  - story: special movie
+    steps:
+      - intent: specialmovietip
+      - action: utter_askformovietaste

@@ -1,3 +1,14 @@
+Tutorial Source: https://github.com/RasaHQ/pokedex-demo
+https://www.youtube.com/watch?v=sazsWmP2d3o
+
+next step use slots to store info: 
+1. ask if user wants mor info about choosen pokemon
+2. ask which info
+3. fetch and play info
+https://www.google.com/search?client=firefox-b-d&q=use+slots+in+rasa#kpvalbx=_2MwGYrehOdbi7_UP2pmq2AU17
+
+-- what if user asks other questions?...
+
 # Howto
 
 ## 1. Creating a docker image from dockerfile
@@ -9,18 +20,21 @@ docker build -t rasavoicedocker .
 
 ## 2. Run and use the image
 
-###
+### buld container
 docker run --name localRasa -v "${pwd}:/opt/mybot" -w "/opt/mybot" -it rasavoicedocker bash
-docker exec -v "${pwd}:/opt/mybot" -w "/opt/mybot" -it localRasa bash
+### start container
+docker start localRasa   
+### get into already startet container
+docker exec -it localRasa bash
 
-### training
-docker run --name localRasa -v "${pwd}:/opt/fragmagentarasamodel" -w "/opt/fragmagentarasamodel" rasavoicedocker rasa train
+## use rasa into container
+rasa train 
+rasa shell
+rasa run actions --actions actions --debug --auto-reload
 
-### run action server
-docker run --name localRasa -v "${pwd}:/opt/rasa-action-server" -w "/opt/rasa-action-server"" rasavoicedocker rasa run actions --actions actions --debug --auto-reload`
 
-### running shell
-docker run -it --name localRasa -v "${pwd}:/opt/fragmagentarasamodel" -w "/opt/fragmagentarasamodel" rasavoicedocker rasa shell
+
+
 
 
 

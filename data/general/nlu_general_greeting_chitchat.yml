@@ -1,0 +1,42 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hallo
+    - hi
+    - hello
+    - hey
+    - servus
+    - grüß Gott
+    - guten Tag
+    - guten Morgen
+    - guten Abend
+    - Hi
+    - Hola
+    - aloha
+    - Guten Tag
+    - Hallo
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - bist du ein bot
+    - bist du ein roboter
+    - bist du ein mensch
+    - bist du echt
+    - spreche ich mit einem menschen
+    - spreche ich mit einem bot

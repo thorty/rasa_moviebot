@@ -4,60 +4,58 @@ intents:
   - greet
   - goodbye
   - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - deny  
   - bot_challenge
-  - demand_joke
-  - confirm_exists
-actions:
-  - action_check_existence  
-  - utter_ask_rephrase
-  - utter_cheer_up
-  - utter_did_that_help
+  - movietip
+  - randommovietip
+  - specialmovietip
+  - denymovietip
+actions:  
+  - utter_ask_rephrase  
   - utter_goodbye
-  - utter_greet
-  - utter_happy
-  - utter_iamabot
-  - utter_joke
+  - utter_greet  
+  - utter_iamabot  
+  - utter_askforspecialmovietip
+  - utter_randommovie
+  - utter_askformovietaste
+  - utter_denied
+  - utter_movieaccepted
 entities:
-  - attribute
-  - mention
-  - object_type
-  - pokemon
-  - pokemon_name
+  - genre  
 
-responses:
+responses:  
   utter_greet:
-  - text: "Hallo, wie geht es dir?"
-
-  utter_cheer_up:
-  - text: "Hier ist etwas um dich aufzubauen:"
-    image: "https://tenor.com/search/futurama-gifs"
-
-  utter_did_that_help:
-  - text: "Hat die das geholfen?"
-
-  utter_happy:
-  - text: "Super, weiter so."
-
+  - text: |
+      "Hi, Ich bin Movi der Filmbot und habe eine Menge Filme im Angebot.\n 
+      Was für einen Film möchtest du sehen?"
   utter_goodbye:
-  - text: "Bye"
+  - text: ", bis zum nächsten mal"
 
   utter_ask_rephrase:
   - text: Sorry ich bin mir nicht sicher? Was meintest du?  
   - text: Könntest du das bitte neu formulieren? Das habe ich nicht ganz verstanden. 
 
   utter_iamabot:
-  - text: "Ich bin ein Bot."
+  - text: "Ja ich bin ein Bot."
 
-  utter_joke:
-  - text: "Siri, warum sind Frauen so komisch zu mir?“ – „Mein Name ist Alexa!"
-  - text: "Zwei Informatiker telefonieren: „Wie ist bei dir das Wetter?“ – „Capslock!“ – „Häh?“ – „Shift unendlich.“"
-  - text: "Treffen sich zwei Magnete, sagt der eine: „Was soll ich heute bloß anziehen?“"
-  - text: "Geht ein Neutron in die Disco. Sagt der Türsteher: „Nur für geladene Gäste!“"
-  - text: "Unterhalten sich 2 Kerzen: „Ist Wasser gefährlich?“ – „Davon kannst du ausgehen!“"
-  - text: "Ich kenne einen lustigen Bahnwitz – weiß aber nicht, ob der ankommt."
+  utter_askforspecialmovietip:
+  - text: Darf ich dir einen anderen Film empfehlen oder hast du spezielle wünsche?
+
+  utter_denied:
+  - text: "Schade"
+
+  utter_randommovie:
+  - text: "Ich kann dir Papa Ante Portas empfehlen."
+  - text: "Ich empfehle dir den neuen Spiderman"
+  - text: "Die Hard soll gut sein"
+  - text: "Das Fenster zum Hof ist ein echter Klassiker"
+  - text: "Pulp Fiction muss man mal gesehen haben"
+
+  utter_movieaccepted:
+  - text: "Ich wünsche gute Unterhaltung"
+
+  utter_askformovietaste:
+  - text: "Welche Art von Film interessiert dich denn?"
 
 session_config:
   session_expiration_time: 60
