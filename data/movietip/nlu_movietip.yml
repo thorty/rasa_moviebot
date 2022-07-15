@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 nlu:
 - intent: movietip
@@ -12,13 +12,93 @@ nlu:
     - kannst du mir etwas zu schauen empfehlen
     - welchen film empfiehlst du mir heute
     - welchen film empfiehlst du mir
+    
     - kannst du mir einen [action]{"entity": "genre"} film raus suchen
     - ich möchte [action]{"entity": "genre"} film raus suchen
     - ich möchte einen [action]{"entity": "genre"} film sehen
     - ich möchte einen [action]{"entity": "genre"} film sehen
+    - etwas zum [lachen]{"entity": "genre" , "value": "comedy"}
+    - einen [lustigen]{"entity": "genre", "value": "comedy"} film
+    - [lustig]{"entity": "genre", "value": "comedy"} 
+    - einen zum [lachen]{"entity": "genre", "value": "comedy"}      
+    - einen [lustigen]{"entity": "genre"} film
     
+    - einen [neuen]{"entity": "release", "value": "neu"} [spannenden]{"entity": "genre"} film
+    - ein [neuerer]{"entity": "release", "value": "neu"} film
+    - ein [neuer]{"entity": "release", "value": "neu"} film
+    - ein [älterer]{"entity": "release", "value": "alt"} film
+    - darf [alt]{"entity": "release", "value": "alt"} sein
+    - sollte schon ein [aktueller]{"entity": "release", "value": "neu"} sein
+    - ein [aktueller]{"entity": "release", "value": "neu"} film bitte
+    - ruhig auch ein [älterer]{"entity": "release", "value": "alt"} film
+    - der film soll [neu]{"entity": "release"} sein
+    - soll [neu]{"entity": "release"} sein
+    
+    - ich möchte einen [neuereren]{"entity": "release", "value": "neu"} film sehen der [lustig]{"entity": "genre", "value": "comedy"} ist und mit ein bisschen [action]{"entity": "genre"}
+    - einen spannenden [krimi]{"entity": "genre"} film mit ordentlich [action]{"entity": "genre"}
+    - ein film für die ganze [familie]{"entity": "genre"} mit viel [abenteuer]{"entity": "genre"}
+    - einen [neuen]{"entity": "release", "value": "neu"} [krimi]{"entity": "genre"}
+    - einen [lustigen](genre) [action]{"entity": "genre"} film
+    - einen guten [lustigen](genre) [action]{"entity": "genre"} film
+    - [spannend](genre) und [lustig](genre) soll der film sein
+    - [spannend](genre) und mit [action](genre) soll der film sein
+    - [spannend](genre) mit ein bisschen [drama](genre) und [neu](release)
+    - ich will etwas zum [lachen](genre) sehen
+    - einen film für [kinder](genre)
 
-- intent: randommovietip
+- lookup: genre
+  examples: |
+    - zeichentrick
+    - action
+    - abenteuer
+    - adventure
+    - krimi
+    - komödie
+    - horror
+    - familie
+    - family
+    - anime
+    - zeichentrick
+    - comedy
+    - spannenden
+    - egal
+    - thriller
+
+- lookup: adventure
+  examples: |
+    - abenteuer
+    - adventure    
+
+- lookup: adventure
+  examples: |
+    - abenteuer
+    - adventure    
+
+- synonym: family
+  examples: |
+    - kinder
+    - kids
+    - familientauglich  
+
+- synonym: comedy
+  examples: |
+    - lachen
+    - lustig
+    - lustigen    
+
+- synonym: thriller
+  examples: |
+    - spannend
+    - spannenden    
+
+- lookup: release
+  examples: |
+    - alt
+    - neu
+    - 1980
+
+
+- intent: doesntmatter
   examples: |
     - egal
     - ist mir egal
@@ -30,7 +110,9 @@ nlu:
     - das beste was du im angebot hast
     - einen anderen film
     - einen weiteren film
-    - weiter
+    - schlag mir was vor
+    - keine ahnung
+    - keinen plan
 
 - intent: specialmovietip
   examples: |
@@ -42,6 +124,8 @@ nlu:
     - kannst du mir einen bestimmten Film empfehlen
     - ich möchte etwas spezielles sehen
     - ich interessiere mich für einen film
+    - ich weiss nicht genau
+    - ich bin unsicher
 
 - intent: denymovietip
   examples: |
@@ -50,4 +134,11 @@ nlu:
     - den möchte ich nicht sehen
     - den film mag ich nicht
     - den mag ich nicht
+    - mag ich nicht
+
+- intent: next
+  examples: |
+    - weiter
+    - nächster tip
+    - neuer tip
 

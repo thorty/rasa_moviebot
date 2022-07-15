@@ -7,7 +7,10 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3.8
 RUN apt-get install -y python-is-python3
 RUN apt-get install python3-pip -y
-RUN python -m pip install -U pip
+# install lib for visualisation
+RUN python -m pip install -U pip 
+
 
 # Install Rasa
-RUN pip3 install rasa[full]==2.8.22 black==20.8b1 openpyxl pytest 
+RUN pip3 install rasa[full]==3.3.1 black==20.8b1 openpyxl pytest 
+#RUN pip3 install rasa[full]==3.0.10 

@@ -2,90 +2,61 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: happy path 1 randomtip affirm
   steps:
-  - user: |
-      hello there!
-    intent: greet
+  - intent: $start
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-
-- story: happy path 2
-  steps:
+      egal
+    intent: doesntmatter
+  - action: utter_randommovie
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
+      okay
     intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
+  - action: utter_movieaccepted
   - action: utter_goodbye
 
 - story: say goodbye
   steps:
   - user: |
-      bye-bye!
+      bye
     intent: goodbye
   - action: utter_goodbye
 
 - story: bot challenge
   steps:
   - user: |
-      are you a bot?
+      bist du ein bot
     intent: bot_challenge
   - action: utter_iamabot
+
+
+- story: randomtip deny form happy path
+  steps:
+  - intent: $start
+  - action: utter_greet
+  - user: |
+      egal
+    intent: doesntmatter
+  - action: utter_randommovie
+  - user: |
+      mag ich nicht
+    intent: denymovietip
+  - action: utter_denied
+  - action: moviefilter_form
+  - active_loop: moviefilter_form
+  - user: |
+      [action]{"entity": "genre"}      
+    intent: movietip
+  # - slot_was_set:
+  #   - genre: action    
+  - action: moviefilter_form
+  - user: |
+      [neu]{"entity": "release"}
+    intent: movietip
+  # - slot_was_set:
+  #   - release: neu
+  #- action: moviefilter_form
+  - active_loop: null
+  - action: utter_slots_values
+  - action: utter_randommovie

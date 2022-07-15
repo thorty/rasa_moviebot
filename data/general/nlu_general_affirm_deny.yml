@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 nlu:
   - intent: affirm
     examples: |
@@ -30,9 +30,6 @@ nlu:
       - vermutlich
       - In Ordnung
       - Klar
-      - so ist es
-      - Was denn sonst
-      - von mir aus
       - einverstanden
       - top
       - angenehm
@@ -45,8 +42,6 @@ nlu:
       - passt
       - präzise
       - richtig
-      - stimmt
-      - zutreffend
       - ja Danke
       - ja Dankeschön
       - ja Dankesehr
@@ -63,20 +58,12 @@ nlu:
       - gebont
       - Klingt gut
       - wollen ich
-      - Machen sie
       - Mach doch
-      - Mach was du willst
       - Wenn du willst
       - möchten ich
       - möchten wir
-      - Wenns notwendig ist
       - ok bitteschön
-      - ok bittesehr
-      - so es erforderlich ist
-      - so es unumgänglich ist
-      - so es unerlässlich ist
-      - so es geboten ist
-      - so es unvermeidlich ist
+      - cool
   - intent: deny
     examples: |
       - Ne
@@ -137,9 +124,6 @@ nlu:
       - wollen nix
       - wollen ich nicht
       - wollen wir nicht
-      - da nicht für Ne
-      - da nicht für Nee
-      - da nicht für nein
       - Danke Ne
       - Danke nein
       - Danke neinnein

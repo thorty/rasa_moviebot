@@ -1,61 +1,99 @@
-version: "2.0"
+version: "3.1"
+
+config:
+  store_entities_as_slots: true
 
 intents:
+  - $start
   - greet
   - goodbye
   - affirm
-  - deny  
+  - deny
   - bot_challenge
   - movietip
-  - randommovietip
+  - doesntmatter
   - specialmovietip
   - denymovietip
-actions:  
-  - utter_ask_rephrase  
-  - utter_goodbye
-  - utter_greet  
-  - utter_iamabot  
-  - utter_askforspecialmovietip
-  - utter_randommovie
-  - utter_askformovietaste
-  - utter_denied
-  - utter_movieaccepted
+  - next
+
 entities:
-  - genre  
+  - genre
+  - rating
+  - release
 
-responses:  
+forms:
+  moviefilter_form:
+    ignored_intents:
+      - chitchat
+    required_slots:
+      - genre
+      - release
+     
+slots:
+  genre:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: genre
+  release:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: release    
+  rating:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: rating   
+
+responses:
+  utter_test:
+    - text: "intent deny triggert in form"
   utter_greet:
-  - text: |
-      "Hi, Ich bin Movi der Filmbot und habe eine Menge Filme im Angebot.\n 
-      Was für einen Film möchtest du sehen?"
+    - text: |
+        "Hi, Ich bin Movi der Filmbot und habe eine Menge Filme im Angebot.
+        Was für einen Film möchtest du sehen?"
   utter_goodbye:
-  - text: ", bis zum nächsten mal"
-
-  utter_ask_rephrase:
-  - text: Sorry ich bin mir nicht sicher? Was meintest du?  
-  - text: Könntest du das bitte neu formulieren? Das habe ich nicht ganz verstanden. 
-
+    - text: ", bis zum nächsten mal"
   utter_iamabot:
-  - text: "Ja ich bin ein Bot."
-
+    - text: "Ja ich bin ein Bot."
+  utter_fallback:
+    - text: "Sorry ich bin mir nicht sicher was du sehen Willst. Welche Art Film interessiert dich denn?"
   utter_askforspecialmovietip:
-  - text: Darf ich dir einen anderen Film empfehlen oder hast du spezielle wünsche?
+    - text: Du kannst mir auch bestimmte Genres nennen und mir sagen ob der film eher neuer oder älter sein soll oder wo er herkommt.
 
   utter_denied:
-  - text: "Schade"
+    - text: "Ok ich habe noch mehr Filme im Angebot."
 
-  utter_randommovie:
-  - text: "Ich kann dir Papa Ante Portas empfehlen."
-  - text: "Ich empfehle dir den neuen Spiderman"
-  - text: "Die Hard soll gut sein"
-  - text: "Das Fenster zum Hof ist ein echter Klassiker"
-  - text: "Pulp Fiction muss man mal gesehen haben"
+  utter_randommovie: # replace woith random movies-action
+    - text: "Ich kann dir Papa Ante Portas empfehlen."
+    - text: "Ich empfehle dir den neuen Spiderman"
+    - text: "Die Hard soll gut sein"
+    - text: "Das Fenster zum Hof ist ein echter Klassiker"
+    - text: "Pulp Fiction muss man mal gesehen haben"
 
   utter_movieaccepted:
-  - text: "Ich wünsche gute Unterhaltung"
+    - text: "Ich wünsche gute Unterhaltung"
 
   utter_askformovietaste:
-  - text: "Welche Art von Film interessiert dich denn?"
+    - text: "Welche Art von Film interessiert dich denn?"
+
+  utter_slots_values:
+    - text: |
+        Ok mal sehen was ich hierfür im Angabot habe.
+        genre: {genre}
+        release: {release}
+
+  #form
+  utter_ask_genre:
+    - text: "Welche Genres soll der Film haben?"
+  utter_ask_rating:
+    - text: "Wie hoch soll der Film Bewertet sein?"
+  utter_ask_release:
+    - text: "Soll es ein neuer Film sein oder darf er auch Älter sein?"
 
 session_config:
   session_expiration_time: 60

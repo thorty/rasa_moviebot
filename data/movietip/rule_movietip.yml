@@ -1,0 +1,24 @@
+version: "3.1"
+
+rules:
+
+- rule: activate special movie form
+  steps:
+  - intent: specialmovietip
+  - action: moviefilter_form
+  - active_loop: moviefilter_form   
+
+
+- rule: submit movie form
+  condition:
+  # Condition that form is active.
+  - active_loop: moviefilter_form
+  steps:
+  # Form is deactivated
+  - action: moviefilter_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.    
+  - action: utter_slots_values
+
