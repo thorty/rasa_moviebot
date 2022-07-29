@@ -1,9 +1,9 @@
 ## todos
 
-* implement next intent
-* form: more then one genre. egal as answer
+* egal as answer in form
 
 
 ## ideas
 * find movie with mood
-* add a rating values: trash or top notch
+* add rating values: trash or top notch, super bewertet, schlecht bewertet, trash, shlefaz, preisgewinner, arthouse, pedagogisch wertfoll, oscar film, jugendfilm
+

@@ -1,0 +1,1 @@
+knowledge = Path("data/pokemons.txt").read_text().split("\n")

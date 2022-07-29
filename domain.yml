@@ -15,27 +15,31 @@ intents:
   - specialmovietip
   - denymovietip
   - next
+  - chitchat
 
 entities:
   - genre
+      # roles:
+      # - genres
   - rating
   - release
 
 forms:
   moviefilter_form:
-    ignored_intents:
-      - chitchat
+    # ignored_intents:
+    #   - chitchat
     required_slots:
       - genre
       - release
      
 slots:
   genre:
-    type: text
+    type: list
     influence_conversation: false
     mappings:
     - type: from_entity
       entity: genre
+#      role: genres
   release:
     type: text
     influence_conversation: false
@@ -59,11 +63,11 @@ responses:
   utter_goodbye:
     - text: ", bis zum nächsten mal"
   utter_iamabot:
-    - text: "Ja ich bin ein Bot."
+    - text: "Ja ich bin ein Bot Namens Movi."
   utter_fallback:
     - text: "Sorry ich bin mir nicht sicher was du sehen Willst. Welche Art Film interessiert dich denn?"
   utter_askforspecialmovietip:
-    - text: Du kannst mir auch bestimmte Genres nennen und mir sagen ob der film eher neuer oder älter sein soll oder wo er herkommt.
+    - text: Du kannst mir auch bestimmte Genres nennen und mir sagen ob der film eher neuer oder älter sein soll.
 
   utter_denied:
     - text: "Ok ich habe noch mehr Filme im Angebot."
@@ -77,6 +81,9 @@ responses:
 
   utter_movieaccepted:
     - text: "Ich wünsche gute Unterhaltung"
+
+  utter_moviebothelp:
+    - text: "Was möchtest du sehen?"
 
   utter_askformovietaste:
     - text: "Welche Art von Film interessiert dich denn?"
@@ -94,6 +101,9 @@ responses:
     - text: "Wie hoch soll der Film Bewertet sein?"
   utter_ask_release:
     - text: "Soll es ein neuer Film sein oder darf er auch Älter sein?"
+  
+  utter_movieform_fallback:
+    - text: "Ich bin nicht sicher was du meinst."
 
 session_config:
   session_expiration_time: 60

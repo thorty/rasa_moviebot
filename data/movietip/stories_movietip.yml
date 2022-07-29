@@ -26,45 +26,37 @@ stories:
       - or:
         - intent: deny
         - intent: denymovietip
+        - intent: next
       - action: utter_denied
       - action: moviefilter_form
       - active_loop: moviefilter_form
 
 
-  # - story: randommovietip_deny
-  #   steps:
-  #     - intent: doesntmatter      
-  #     - action: utter_randommovie
-  #     - or:
-  #       - intent: deny
-  #       - intent: denymovietip
-  #     - action: utter_denied
-  #     - action: moviefilter_form
-  #     - active_loop: moviefilter_form   
-  #     - or:         
-  #       - intent: deny      
-  #       - intent: affirm
-  #     - action: utter_test
-  #     - action: moviefilter_form         
+  - story: moviefilter_form stop
+    steps:
+      - intent: specialmovietip
+      - action: moviefilter_form
+      - active_loop: moviefilter_form         
+      - intent: chitchat        
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_iamabot
 
+  - story: moviefilter_form continue
+    steps:
+      - intent: specialmovietip
+      - action: moviefilter_form
+      - active_loop: moviefilter_form         
+      - or:
+        - intent: affirm
+        - intent: deny     
+      - action: utter_movieform_fallback
+      - action: moviefilter_form
+      
 
-  # - story: special movie
-  #   steps:
-  #     - intent: specialmovietip
-  #     - action: moviefilter_form
-  #     - active_loop: moviefilter_form
-  #     - action: utter_slots_values
-
-  # - story: movietip_deny
-  #   steps:
-  #     - intent: movietip
-  #     - action: utter_randommovie
-  #     - intent: deny
-  #     - action: utter_denied
-  #     - action: moviefilter_form
-  #     - active_loop: moviefilter_form
-  #     - active_loop: null
-  #     - slot_was_set:
-  #         - requested_slot: null
-  #     - action: utter_slots_values
-
+  - story: denie or affirm handling when not expected
+    steps: 
+      - or:
+        - intent: affirm
+        - intent: deny  
+      - action: utter_moviebothelp
