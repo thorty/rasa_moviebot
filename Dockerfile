@@ -19,7 +19,7 @@ RUN python -m pip install --upgrade pip
 
 
 # Install Rasa
-RUN pip3 install rasa[full]==3.6.2 black==20.8b1 openpyxl pytest 
+RUN pip3 install rasa[full]==3.6.2 black==20.8b1 openpyxl pytest pandas
 #RUN pip3 install rasa[full]==3.0.10 
 
 #for rasa-x -does not work with rasa3
