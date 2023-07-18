@@ -43,3 +43,4 @@ policies:
     core_fallback_threshold: 0.6
     core_fallback_action_name: utter_fallback
     enable_fallback_prediction: True    
+  #- name: debug.debug.DebugPolicy    

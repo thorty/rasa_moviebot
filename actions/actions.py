@@ -24,6 +24,6 @@ class ActionCheckExistence(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            logger.debug("action_fallback triggerd")       
-            dispatcher.utter_message(response="utter_restart_with_button")
-            return []
+                logger.debug("action_fallback triggerd")       
+                dispatcher.utter_message(response="utter_restart_with_button")
+                return []

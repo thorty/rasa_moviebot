@@ -53,7 +53,17 @@ stories:
       - action: utter_movieform_fallback
       - action: moviefilter_form
       
-
+  - story: moviefilter_form abort
+    steps:
+      - intent: specialmovietip
+      - action: moviefilter_form
+      - active_loop: moviefilter_form         
+      - intent: doesntmatter       
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_randommovie             
+      
+          
   - story: denie or affirm handling when not expected
     steps: 
       - or:

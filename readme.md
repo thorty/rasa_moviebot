@@ -16,7 +16,7 @@ docker build -t rasa3docker .
 ## 2. Run and use the image
 
 ### buld container
-docker run --name rasa3docker -v "${pwd}:/opt/mybot" -w "/opt/mybot" -it rasa3docker bash
+docker run --name rasa3docker -p 5002:5002 -v "${pwd}:/opt/mybot" -w "/opt/mybot" -it rasa3docker bash
 ### start container
 docker start rasa3docker   
 ### get into already startet container
