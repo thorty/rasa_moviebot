@@ -3,17 +3,23 @@ FROM ubuntu:20.04
 # upgrade ubuntu
 RUN apt-get update && apt-get upgrade -y
 
+# Do this to not get stuck in timezone selection of python installation
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
 # install python
-RUN apt-get install -y python3.8
-RUN apt-get install -y python-is-python3
-RUN apt-get install python3-pip -y
+RUN apt-get install -y python3.10 && apt-get install -y python-is-python3 && apt-get install -y python3-pip
 # install lib for visualisation
 RUN python -m pip install -U pip 
 RUN python -m pip install --upgrade pip
 
 
 # Install Rasa
-RUN pip3 install rasa[full]==3.2.4 black==20.8b1 openpyxl pytest 
+RUN pip3 install rasa[full]==3.6.2 black==20.8b1 openpyxl pytest 
 #RUN pip3 install rasa[full]==3.0.10 
 
 #for rasa-x -does not work with rasa3
