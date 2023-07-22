@@ -23,13 +23,10 @@ docker start rasa3docker
 docker exec -it rasa3docker bash
 
 ## use rasa into container
-rasa train 
+rasa train
+
 rasa shell
+
 rasa run actions --actions actions --debug --auto-reload
+
 rasa visualize 
-
-
-
-
-
-
