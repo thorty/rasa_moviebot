@@ -69,7 +69,7 @@ responses:
   - text: Welche Art von Film interessiert dich denn?
   utter_slots_values:
   - text: |
-      Ok mal sehen was ich hierfür im Angebot habe.
+      Ok mal sehen was ich hierfür im Angabot habe.
       genre: {genre}
       release: {release}
   utter_ask_genre:
@@ -80,10 +80,6 @@ responses:
   - text: Soll es ein neuer Film sein oder darf er auch Älter sein?
   utter_movieform_fallback:
   - text: Ich bin nicht sicher was du meinst.
-
-actions:
-- validate_moviefilter_form
-
 forms:
   moviefilter_form:
     required_slots:
