@@ -13,7 +13,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
-from .utils.moiveutil import readData
+from .utils.create_db import read_db
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +37,6 @@ class ValidateMoviefilterForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_moviefilter_form"
 
-    movie_df = readData("actions/data/movies.dat")
+    movie_df = read_db("actions/data/movies.dat")
 
     print(movie_df)

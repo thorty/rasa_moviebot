@@ -1,7 +1,8 @@
 ## todos
 
 * egal as answer in form
-
+* coll title search
+  * partial matches
 
 ## ideas
 * find movie with mood
