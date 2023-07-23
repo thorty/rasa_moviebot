@@ -47,7 +47,9 @@ def readData_toDict(dataPath):
             genre = lineSplit[2]
 
             title, date = split_title_time(title_date)
-            genre = split_genre(genre)
+            title = title.lower()
+            genre = genre.lower()
+            genre = genre.split("|")
 
             movieDict[id] = [title, date, ",".join(genre)]
     return movieDict
@@ -59,10 +61,6 @@ def split_title_time(title_date: str):
 
     date = date.replace("(", "").strip(")").strip()
     return title, date
-
-
-def split_genre(genre: str):
-    return genre.split("|")
 
 
 def create_db(dbPath, movieDict):
@@ -89,21 +87,23 @@ def create_db(dbPath, movieDict):
         connection = sqlite3.connect(dbPath)
         cursor = connection.cursor()
 
-        sql_command = """
-        CREATE TABLE movies (
-        id INTEGER,
-        title TEXT, 
-        year INTEGER, 
-        genre TEXT
-        UNIQUE(id)
-        );"""
+        # sql_command = """
+        # CREATE TABLE movies (
+        # id INTEGER,
+        # title TEXT, 
+        # year INTEGER, 
+        # genre TEXT
+        # UNIQUE(id)
+        # );"""
 
-        cursor.execute(sql_command)
+        cursor.execute(
+            "CREATE TABLE movies (id INTEGER, title TEXT, year INTEGER, genre TEXT, UNIQUE(id))"
+        )
         connection.commit()
         connection.close()
         logging.info("DB: created")
 
 
-# if __name__ == "__main__":
-#     movieDict = readData_toDict("/opt/mybot/actions/data/movies.dat")
-#     create_db("/opt/mybot/actions/data/movies.db", movieDict)
+if __name__ == "__main__":
+    movieDict = readData_toDict("/opt/mybot/actions/data/movies.dat")
+    create_db("/opt/mybot/actions/data/movies.db", movieDict)

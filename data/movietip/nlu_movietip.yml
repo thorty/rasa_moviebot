@@ -22,7 +22,7 @@ nlu:
     - [lustig]{"entity": "genre", "value": "comedy"} 
     - einen zum [lachen]{"entity": "genre", "value": "comedy"}      
     - einen [lustigen]{"entity": "genre"} film
-    
+
     - einen [neuen]{"entity": "release", "value": "neu"} [spannenden]{"entity": "genre"} film
     - ein [neuerer]{"entity": "release", "value": "neu"} film
     - ein [neuer]{"entity": "release", "value": "neu"} film
@@ -33,7 +33,7 @@ nlu:
     - ruhig auch ein [älterer]{"entity": "release", "value": "alt"} film
     - der film soll [neu]{"entity": "release"} sein
     - soll [neu]{"entity": "release"} sein
-    
+
     - ich möchte einen [neuereren]{"entity": "release", "value": "neu"} film sehen der [lustig]{"entity": "genre", "value": "comedy"} ist und mit ein bisschen [action]{"entity": "genre"}
     - einen spannenden [krimi]{"entity": "genre"} film mit ordentlich [action]{"entity": "genre"}
     - ein film für die ganze [familie]{"entity": "genre"} mit viel [abenteuer]{"entity": "genre"}
@@ -67,36 +67,35 @@ nlu:
 - lookup: adventure
   examples: |
     - abenteuer
-    - adventure    
+    - adventure
 
 - lookup: adventure
   examples: |
     - abenteuer
-    - adventure    
+    - adventure
 
 - synonym: family
   examples: |
     - kinder
     - kids
-    - familientauglich  
+    - familientauglich
 
 - synonym: comedy
   examples: |
     - lachen
     - lustig
-    - lustigen    
+    - lustigen
 
 - synonym: thriller
   examples: |
     - spannend
-    - spannenden    
+    - spannenden
 
 - lookup: release
   examples: |
     - alt
     - neu
     - 1980
-
 
 - intent: doesntmatter
   examples: |
@@ -141,4 +140,3 @@ nlu:
     - weiter
     - nächster tip
     - neuer tip
-

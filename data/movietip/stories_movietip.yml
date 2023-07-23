@@ -1,72 +1,82 @@
 version: "3.1"
 
 stories:
-  - story: movietip_accept
-    steps:
-      - intent: movietip
-      - action: utter_slots_values  
-      - action: utter_randommovie
-      - intent: affirm
-      - action: utter_movieaccepted
-      - action: utter_goodbye
+# - story: movietip_accept
+#   steps:
+#     - intent: movietip
+#     - action: utter_slots_values
+#     - action: utter_randommovie
+#     - intent: affirm
+#     - action: utter_movieaccepted
+#     - action: utter_goodbye
 
-  - story: randommovietip_affirm
-    steps:
-      - intent: doesntmatter      
-      - action: utter_randommovie
-      - intent: affirm
-      - action: utter_movieaccepted
-      - action: utter_goodbye
+# - story: randommovietip_affirm
+#   steps:
+#     - intent: doesntmatter
+#     - action: utter_randommovie
+#     - intent: affirm
+#     - action: utter_movieaccepted
+#     - action: utter_goodbye
 
+# - story: randommovietip_deny
+#   steps:
+#     - intent: doesntmatter
+#     - action: utter_randommovie
+#     - or:
+#         - intent: deny
+#         - intent: denymovietip
+#         - intent: next
+#     - action: utter_denied
+#     - action: moviefilter_form
+#     - active_loop: moviefilter_form
 
-  - story: randommovietip_deny
-    steps:
-      - intent: doesntmatter      
-      - action: utter_randommovie
-      - or:
-        - intent: deny
-        - intent: denymovietip
-        - intent: next
-      - action: utter_denied
-      - action: moviefilter_form
-      - active_loop: moviefilter_form
+# - story: moviefilter_form stop
+#   steps:
+#     - intent: specialmovietip
+#     - action: moviefilter_form
+#     - active_loop: moviefilter_form
+#     - intent: chitchat
+#     - action: action_deactivate_loop
+#     - active_loop: null
+#     - action: utter_iamabot
 
+# - story: moviefilter_form continue
+#   steps:
+#     - intent: specialmovietip
+#     - action: moviefilter_form
+#     - active_loop: moviefilter_form
+#     - or:
+#         - intent: affirm
+#         - intent: deny
+#     - action: utter_movieform_fallback
+#     - action: moviefilter_form
 
-  - story: moviefilter_form stop
-    steps:
-      - intent: specialmovietip
-      - action: moviefilter_form
-      - active_loop: moviefilter_form         
-      - intent: chitchat        
-      - action: action_deactivate_loop
-      - active_loop: null
-      - action: utter_iamabot
+# - story: moviefilter_form abort
+#   steps:
+#     - intent: specialmovietip
+#     - action: moviefilter_form
+#     - active_loop: moviefilter_form
+#     - intent: doesntmatter
+#     - action: action_deactivate_loop
+#     - active_loop: null
+#     - action: utter_randommovie
 
-  - story: moviefilter_form continue
-    steps:
-      - intent: specialmovietip
-      - action: moviefilter_form
-      - active_loop: moviefilter_form         
-      - or:
-        - intent: affirm
-        - intent: deny     
-      - action: utter_movieform_fallback
-      - action: moviefilter_form
-      
-  - story: moviefilter_form abort
-    steps:
-      - intent: specialmovietip
-      - action: moviefilter_form
-      - active_loop: moviefilter_form         
-      - intent: doesntmatter       
-      - action: action_deactivate_loop
-      - active_loop: null
-      - action: utter_randommovie             
-      
-          
-  - story: denie or affirm handling when not expected
-    steps: 
-      - or:
-        - intent: affirm
-        - intent: deny  
-      - action: utter_moviebothelp
+# - story: denie or affirm handling when not expected
+#   steps:
+#     - or:
+#         - intent: affirm
+#         - intent: deny
+#     - action: utter_moviebothelp
+
+- story: test search functions
+  steps:
+    - intent: $start_search
+    # - action: utter_test_what_title
+    # - intent: movietip
+    # - action: action_search_title
+    # - action: utter_test_what_year
+    # - intent: movietip
+    # - action: action_search_year
+    - action: utter_ask_genre
+    - intent: movietip
+    - action: action_search_genre

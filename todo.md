@@ -1,7 +1,7 @@
 ## todos
 
 * egal as answer in form
-* coll title search
+* cool title search
   * partial matches
 * implement error handling
 * implement unit-tests

@@ -37,10 +37,10 @@ def search_genre(genre):
     cursor.execute(f"SELECT * FROM movies WHERE genre LIKE '%{genre}%'")
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
-
+    # for row in rows:
+    #     print(row)
     connection.close()
+    return(rows)
 
 
 def create_connection():
