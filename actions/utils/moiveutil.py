@@ -1,11 +1,8 @@
 # knowledge = Path("data/pokemons.txt").read_text().split("\n")
+import sqlite3
+from pathlib import Path
 
 import pandas as pd
-
-
-# def main():
-#     dataPath = "../data/movies.dat"
-#     df_movies = readData(dataPath)
 
 
 def readData(dataPath):
@@ -47,5 +44,29 @@ def split_genre(genre: str):
     return genre.split("|")
 
 
-# if __name__ == "__main__":
-#     main()
+def create_db(dbPath):
+    my_db = Path(dbPath)
+    if my_db.is_file():
+        connection = sqlite3.connect(dbPath)
+        cursor = connection.cursor()
+
+        sql_command = """
+        CREATE TABLE movies (
+        id INTEGER,
+        title TEXT, 
+        year INTEGER, 
+        genre TEXT
+        );"""
+
+        cursor.execute(sql_command)
+
+        connection.commit()
+        connection.close()
+        return True
+    else:
+        return False
+
+
+if __name__ == "__main__":
+    create_db("/opt/mybot/actions/data/movies.db")
+    df_movies = readData("/opt/mybot/actions/data/movies.dat")
