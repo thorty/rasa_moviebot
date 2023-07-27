@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # install python
-RUN apt-get install -y python3.10 && apt-get install -y python-is-python3 && apt-get install -y python3-pip
+RUN apt-get install -y python3.10 && apt-get install -y python-is-python3 && apt-get install -y python3-pip && apt-get install git
 # install lib for visualisation
 RUN python -m pip install -U pip 
 RUN python -m pip install --upgrade pip
@@ -20,7 +20,7 @@ RUN python -m pip install --upgrade pip
 
 # Install Rasa
 RUN pip3 install rasa[full]==3.6.2 black==20.8b1 openpyxl pytest pandas
-#RUN pip3 install rasa[full]==3.0.10 
+RUN pip3 install pymilvus==2.2.14
 
 #for rasa-x -does not work with rasa3
 #ENV DEBIAN_FRONTEND=noninteractive

@@ -8,6 +8,9 @@ https://dev.to/petr7555/rasa-creating-forms-bg8
 
 # Howto
 
+## Start with milvusdb
+docker compose up -d
+
 ## 1. Creating a docker image from dockerfile
 
 ### Build a dockerimage with name rasavoicedocker
